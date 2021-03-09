@@ -11,7 +11,7 @@ body {
   background: #fff;
   -webkit-font-smoothing: antialiased;
 }
-.x-spreadsheet textarea {
+.x-spreadsheet .textarea {
   font: 400 13px Arial, 'Lato', 'Source Sans Pro', Roboto, Helvetica, sans-serif;
 }
 .x-spreadsheet-sheet {
@@ -278,7 +278,7 @@ body {
   z-index: 100;
   pointer-events: auto;
 }
-.x-spreadsheet-editor .x-spreadsheet-editor-area textarea {
+.x-spreadsheet-editor .x-spreadsheet-editor-area .textarea {
   box-sizing: content-box;
   border: none;
   padding: 0 3px;
@@ -292,6 +292,10 @@ body {
   word-wrap: break-word;
   line-height: 22px;
   margin: 0;
+  background-color: white;
+}
+.x-spreadsheet-editor .x-spreadsheet-editor-area .textarea .formula-token {
+  margin-right: 2px;
 }
 .x-spreadsheet-editor .x-spreadsheet-editor-area .textline {
   overflow: hidden;
