@@ -6,12 +6,6 @@ import {
   tf
 } from '../../src/locale/locale';
 
-// Add window global if it doesn't exist
-// Some tests depend on this global variable's existence
-if (typeof window === 'undefined') {
-  global.window = {};
-}
-
 // Override messages that exist in the fallback locale
 const localeTest1 = 'TEST_1';
 const localeTest1Messages = {
@@ -83,7 +77,11 @@ describe('locale', () => {
       // Only define locale test 2 messages here
       locale(localeTest2, localeTest2Messages, true);
 
-      // Depends on existence of window global variable
+      // Add window global if it doesn't exist
+      if (typeof window === 'undefined') {
+        global.window = {};
+      }
+
       // Supply a fallback locale test 2 message dictionary (from locale test 1)
       window.x_spreadsheet = { $messages: {
         'TEST_2': localeTest1Messages
@@ -91,5 +89,7 @@ describe('locale', () => {
 
       assert.equal(t('toolbar.redo'), 'Test 1 Redo');
     });
+  });
+});
   });
 });
