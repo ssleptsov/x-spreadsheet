@@ -105,7 +105,7 @@ const defaultSettings = {
   },
 };
 
-const toolbarHeight = 41;
+const toolbarHeight = 66;
 const bottombarHeight = 41;
 
 
